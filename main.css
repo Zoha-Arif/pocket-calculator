@@ -1,23 +1,71 @@
-button {
-  height: 70px;
-  width: 70px;
-  background-color: #fff;
-  border-radius: 3px;
-  border: 1px solid #c4c4c4;
-  background-color: transparent;
-  font-size: 2rem;
-  color: #333;
-  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
-  text-shadow: 0 1px rgba(255,255,255,.4);
+table {
+  width: 310px;
+  margin: 50px auto;
+  background: #fffacd;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 20px 20px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  border-collapse: separate;
+  border-spacing: 20px;
 }
-.calculator-keys {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 5px;
-  grid-column-gap: 5px;
-  position: relative;
-  text-align: justify;
-  margin-left: 50%;
-  margin-right: 50%;
+
+#input {
+  height: 50px;
+  padding: 5px;
+  font-size: 210%;
+  text-align: right;
+  border: none;
+  border-radius: 5px 5px 0px 0px;
+  /* box-shadow: 2px 2px 2px black; */
+  font-family: 'Source Code Pro', monospace;
+  color: black;
+
+}
+
+input[type=button]{
+  height: 50px;
+  width: 50px;
+  background: #ffe4e1;
+  color: black;
+  margin: 3px;   /* distance between buttons */
+  border-radius: 8px;
+  border: none;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+input[type=button]:hover{
+  background: #fff0f5;
+  cursor: pointer;
+
+}
+
+#equal {
+  background: #B0FFB0;
+}
+
+#equal:hover {
+  background: #D6FFD6;
+  cursor: pointer;
+}
+
+#AC {
+  background: #FFB0B0;
+}
+
+#AC:hover {
+  background: #FFD6D6;
+  cursor: pointer;
+}
+
+.blue {
+  background: #D1EEEE;
+}
+
+.blue:hover {
+  background: #E0EEEE;
+  cursor: pointer;
 }
