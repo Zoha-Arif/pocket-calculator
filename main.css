@@ -29,13 +29,31 @@ input[type=button]{
   width: 50px;
   background: #ffe4e1;
   color: black;
+  position: relative;
   margin: 3px;   /* distance between buttons */
+  margin-top: 3px;
   border-radius: 8px;
   border: none;
   font-family: 'Source Code Pro', monospace;
   font-weight: 700;
   font-size: 20px;
 }
+
+input[type=image]{
+  height: 50px;
+  width: 50px;
+  color: black;
+  /*margin: 3px;   /* distance between buttons */
+  border-radius: 8px;
+  border: none;
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 3px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  font-size: 20px;
+}
+
 
 input[type=button]:hover{
   background: #fff0f5;
@@ -53,19 +71,87 @@ input[type=button]:hover{
 }
 
 #AC {
-  background: #FFB0B0;
+  background: #ff9e94;
 }
 
 #AC:hover {
-  background: #FFD6D6;
+  background: #FFB0B0;
   cursor: pointer;
 }
 
-.blue {
+#blue1 {
   background: #D1EEEE;
 }
 
-.blue:hover {
+#blue1:hover {
   background: #E0EEEE;
   cursor: pointer;
+}
+
+#blue2 {
+  background: #D1EEEE;
+}
+
+#blue2:hover {
+  background: #E0EEEE;
+  cursor: pointer;
+}
+
+#blue3 {
+  background: #D1EEEE;
+}
+
+#blue3:hover {
+  background: #E0EEEE;
+  cursor: pointer;
+}
+
+#blue4 {
+  background: #D1EEEE;
+}
+
+#blue4:hover {
+  background: #E0EEEE;
+  cursor: pointer;
+}
+
+#blue5 {
+  background: #D1EEEE;
+}
+
+#blue5:hover {
+  background: #E0EEEE;
+  cursor: pointer;
+}
+
+#blue6 {
+  background: #D1EEEE;
+}
+
+#blue6:hover {
+  background: #E0EEEE;
+  cursor: pointer;
+}
+
+#blue7 {
+  background: #ffd394;
+}
+
+#blue7:hover {
+  background: #ffe8c7;
+  cursor: pointer;
+}
+
+#purp5 {
+  background: #e8c7ff;
+}
+
+#purp5:hover {
+  background: #f2e1ff;
+  cursor: pointer;
+}
+
+.class {
+  position: absolute;
+  margin-left: 22px;
 }

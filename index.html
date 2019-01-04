@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!--YOU HAVE TO HAVE A SEPERATE ABSOLUTE POSITIONG / ID FOR EACH BUTTON WITH AN IMAGE -->
 <html>
   <head>
     <title>Pocket Calculator</title>
@@ -30,21 +30,28 @@
         <input type="button" value="4" onclick="getNumber(4)">
         <input type="button" value="5" onclick="getNumber(5)">
         <input type="button" value="6" onclick="getNumber(6)">
-        <input type="button" value="+" onclick="getNumber(+)" class="blue">
-        <input type="button" value="-" onclick="getNumber(-)" class="blue">
-        <input type="button" value="&divide" onclick="getNumber(/)" class="blue">
+        <input type="button" value="+" onclick="getNumber(+)" id="blue1">
+        <input type="button" value="-" onclick="getNumber(-)" id="blue2">
+        <input type="button" value="&divide" onclick="getNumber(/)" id="blue3">
         <br>
         <input type="button" value="7" onclick="getNumber(7)">
         <input type="button" value="8" onclick="getNumber(8)">
         <input type="button" value="9" onclick="getNumber(9)">
-        <input type="button" value="&times" onclick="getNumber(x)" class="blue">
-        <input type="button" value="x^2" onclick="getNumber(x)" class="blue">
-        <input type="button" value="x^3" onclick="getNumber(x)" class="blue">
+        <input type="button" value="&times" onclick="getNumber(x)" id="blue4">
+        <input type="image" src="square.png" onclick="getNumber(x)" id="blue5">
+        <input type="image" src="cubes.png" onclick="getNumber(x)" id="blue6">
         <br>
         <input type="button" value="0" onclick="getNumber(0)">
         <input type="button" value="." onclick="getOperand(.)">
         <input type="button" value="=" id="equal" onclick="getOperand(=)">
-
+        <input type="button" value="sin" onclick="getNumber(x)" id="blue7">
+        <input type="button" value="cos" onclick="getNumber(x)" id="blue7">
+        <input type="button" value="tan" onclick="getNumber(x)" id="blue7">
+        <br>
+        <input type="button" value="x!" onclick="getNumber(x)" class="purp5">
+        <input type="button" value="√x" onclick="getNumber(x)" class="purp5">
+        <input type="image" src="cube.png" onclick="getNumber(x)" class="purp5" class="button-add">
+        <input type="image" src="y.png" onclick="getNumber(x)" class="purp5" id="class">
       </td>
 
 
