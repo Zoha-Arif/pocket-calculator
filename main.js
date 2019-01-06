@@ -111,8 +111,20 @@ function clearScreen(){
 
 function answer(num1, num2, operand){
   console.log(evalStringArray);
+  var z = 0;
+  for (var j = 1; j < evalStringArray.length; j++){
+    if (evalStringArray[j] == '-' && evalStringArray[z] == '-') {
+      evalStringArray.splice(j, 1);
+      evalStringArray.splice(z, 1);
+      j++
+      z++
+      //doesn't work when you negate four times. only eliminates one pair of negatives. 
+    }
+    z++
+  }
+console.log(evalStringArray);
   var problem = evalStringArray.join('');
-  problem = problem.replace(/ +/g, ' '); 
+  problem = problem.replace(/ +/g, ' ');
   console.log(problem);
   var evaluation = eval(problem);
   input_var.value = evaluation;
@@ -124,4 +136,67 @@ function answer(num1, num2, operand){
   console.log(operand);
   var num2 = num02;
   console.log(num2);*/
+}
+
+function Negation(){
+  var index1 = evalStringArray.length;
+  var index2 = index1 - 1;
+  var count = 0;
+  var sign = false;
+
+  for(var i = index2; i != 0; i--){
+    if (evalStringArray[i] == "*") {
+      sign = true;
+    }
+    else if (evalStringArray[i] == "/") {
+      sign = true;
+    }
+    else if (evalStringArray[i] == "-") {
+      sign = true;
+    }
+    else if (evalStringArray[i] == "+") {
+      sign = true;
+    }
+    else if (sign == false) {
+        count = count + 1;
+    }
+  }
+
+  console.log("final count:");
+  console.log(count);
+  console.log("index2:");
+  console.log(index2);
+
+  negated_num = [];
+  for (var s = 0; s < count; s++){
+    var push = evalStringArray[index2];
+    negated_num.splice(0, 0, push);
+    index2 = index2 - 1;
+  }
+
+  var problem1 = negated_num.join('');
+  problem1 = problem1.replace(/ +/g, ' ');
+  console.log("number:");
+  console.log(problem1);
+  console.log(negated_num);
+
+  var negnum = problem1 * (-1);
+  console.log("neg:");
+  console.log(negnum);
+
+  if (negnum < 0){
+    index1 = evalStringArray.length;
+    index2 = index1;
+    index2 = index2 - count;
+    evalStringArray.splice(index2, 0, "-");
+    console.log(evalStringArray);
+  }
+
+  else {
+    index1 = evalStringArray.length;
+    index2 = index1;
+    index2 = index2 - count;
+    evalStringArray.splice(index2, 0, "+");
+    console.log(evalStringArray);
+  }
 }
