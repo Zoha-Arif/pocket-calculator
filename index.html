@@ -23,35 +23,36 @@
         <input type="button" value="1" onclick="getNumber(1)">
         <input type="button" value="2" onclick="getNumber(2)">
         <input type="button" value="3" onclick="getNumber(3)">
-        <input type="button" value="AC" id="AC" onclick="getNumber(3)">
+        <input type="button" value="AC" id="AC" onclick="clearScreen()">
         <input type="button" value="+/-" onclick="getNumber(3)">
         <input type="button" value="%" onclick="getNumber(3)">
         <br>
         <input type="button" value="4" onclick="getNumber(4)">
         <input type="button" value="5" onclick="getNumber(5)">
         <input type="button" value="6" onclick="getNumber(6)">
-        <input type="button" value="+" onclick="getNumber(+)" id="blue1">
-        <input type="button" value="-" onclick="getNumber(-)" id="blue2">
-        <input type="button" value="&divide" onclick="getNumber(/)" id="blue3">
+        <input type="button" value="+" onclick="getOperand('+')" id="blue1">
+        <input type="button" value="-" onclick="getOperand('-')" id="blue2">
+        <input type="button" value="&divide" onclick="getOperand('/')" id="blue3">
         <br>
         <input type="button" value="7" onclick="getNumber(7)">
         <input type="button" value="8" onclick="getNumber(8)">
         <input type="button" value="9" onclick="getNumber(9)">
-        <input type="button" value="&times" onclick="getNumber(x)" id="blue4">
-        <input type="image" src="square.png" onclick="getNumber(x)" id="blue5">
+        <input type="button" value="&times" onclick="getOperand('x')" id="blue4">
+        <input type="image" src="square.png" onclick="getNumber('1')" id="blue5">
         <input type="image" src="cubes.png" onclick="getNumber(x)" id="blue6">
         <br>
         <input type="button" value="0" onclick="getNumber(0)">
-        <input type="button" value="." onclick="getOperand(.)">
-        <input type="button" value="=" id="equal" onclick="getOperand(=)">
+        <input type="button" value="." onclick="getNumber('.')">
+        <input type="button" value="=" id="equal" onclick="getOperand('=')">
         <input type="button" value="sin" onclick="getNumber(x)" id="blue7">
         <input type="button" value="cos" onclick="getNumber(x)" id="blue7">
         <input type="button" value="tan" onclick="getNumber(x)" id="blue7">
         <br>
-        <input type="button" value="x!" onclick="getNumber(x)" class="purp5">
-        <input type="button" value="√x" onclick="getNumber(x)" class="purp5">
-        <input type="image" src="cube.png" onclick="getNumber(x)" class="purp5" class="button-add">
-        <input type="image" src="y.png" onclick="getNumber(x)" class="purp5" id="class">
+        <input type="button" value="x!" onclick="getNumber(x)" id="purp5">
+        <input type="button" value="√x" onclick="getNumber(x)" id="purp5">
+        <input type="image" src="cube.png" onclick="getNumber(x)" class="purp5" id="im1">
+        <input type="image" src="y.png" onclick="getNumber(x)" class="purp5" id="im2">
+        <input type="image" src="exponenty.png" onclick="getNumber(x)" class="purp5" id="im3">
       </td>
 
 

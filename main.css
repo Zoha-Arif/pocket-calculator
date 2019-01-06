@@ -9,6 +9,7 @@ table {
   font-weight: 700;
   border-collapse: separate;
   border-spacing: 20px;
+  z-index: 0;
 }
 
 #input {
@@ -117,6 +118,10 @@ input[type=button]:hover{
 
 #blue5 {
   background: #D1EEEE;
+  position: absolute;
+  top: 327px;
+  left: 965px;
+  margin-left: 52px;
 }
 
 #blue5:hover {
@@ -126,6 +131,10 @@ input[type=button]:hover{
 
 #blue6 {
   background: #D1EEEE;
+  position: absolute;
+  top: 327px;
+  left: 1027px;
+  margin-left: 52px;
 }
 
 #blue6:hover {
@@ -154,4 +163,45 @@ input[type=button]:hover{
 .class {
   position: absolute;
   margin-left: 22px;
+}
+
+#im1 {
+  background: #e8c7ff;
+  position: absolute;
+  top: 440px;
+  left: 836px;
+  margin-left: 52px;
+}
+
+#im1:hover {
+  background: #f2e1ff;
+  cursor: pointer;
+}
+
+#im2 {
+  background: #e8c7ff;
+  position: absolute;
+  top: 440px;
+  left: 900px;
+  margin-left: 52px;
+  z-index: 10;
+}
+
+#im2:hover {
+  background: #f2e1ff;
+  cursor: pointer;
+}
+
+#im3 {
+  background: #e8c7ff;
+  position: absolute;
+  top: 440px;
+  left: 968px;
+  margin-left: 52px;
+  z-index: 10;
+}
+
+#im3:hover {
+  background: #f2e1ff;
+  cursor: pointer;
 }
