@@ -3,6 +3,7 @@ var num01;
 var executed = false;
 var num02;
 var evalStringArray = [];
+var commas = [];
 
 function getNumber(num){
   input_var = document.getElementById('input');
@@ -10,6 +11,19 @@ function getNumber(num){
     case 1:
       input_var.value += '1';
       evalStringArray.push('1');
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          for (var h = 0; h < input_var.value.length; h++){
+            var value = input_var.value[h];
+            commas.push(value);
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = problem4;
+        }
+      }
       break;
     case 2:
       input_var.value += '2';
@@ -112,15 +126,63 @@ function clearScreen(){
 function answer(num1, num2, operand){
   console.log(evalStringArray);
   var z = 0;
-  for (var j = 1; j < evalStringArray.length; j++){
-    if (evalStringArray[j] == '-' && evalStringArray[z] == '-') {
+  for (var j = 1; j < evalStringArray.length;){
+    if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
       evalStringArray.splice(j, 1);
-      evalStringArray.splice(z, 1);
-      j++
-      z++
-      //doesn't work when you negate four times. only eliminates one pair of negatives. 
+      // evalStringArray.splice(z, 1);
+      console.log("j:");
+      console.log(j);
+      console.log("z:");
+      console.log(z);
+      console.log(evalStringArray);
+      j = 1;
+      z = 0;
     }
-    z++
+    else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "-")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      console.log("j:");
+      console.log(j);
+      console.log("z:");
+      console.log(z);
+      console.log(evalStringArray);
+      j = 1;
+      z = 0;
+    }
+
+    else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "/")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      console.log("j:");
+      console.log(j);
+      console.log("z:");
+      console.log(z);
+      console.log(evalStringArray);
+      j = 1;
+      z = 0;
+    }
+
+    else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "*")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      console.log("j:");
+      console.log(j);
+      console.log("z:");
+      console.log(z);
+      console.log(evalStringArray);
+      j = 1;
+      z = 0;
+    }
+
+    else {
+      console.log("j:");
+      console.log(j);
+      console.log("z:");
+      console.log(z);
+      console.log(evalStringArray);
+      z++;
+      j++;
+    }
   }
 console.log(evalStringArray);
   var problem = evalStringArray.join('');
@@ -141,7 +203,7 @@ console.log(evalStringArray);
 function Negation(){
   var index1 = evalStringArray.length;
   var index2 = index1 - 1;
-  var count = 0;
+  var count = 1;
   var sign = false;
 
   for(var i = index2; i != 0; i--){
@@ -190,13 +252,15 @@ function Negation(){
     index2 = index2 - count;
     evalStringArray.splice(index2, 0, "-");
     console.log(evalStringArray);
+    input_var.value = negnum;
   }
 
   else {
     index1 = evalStringArray.length;
     index2 = index1;
     index2 = index2 - count;
-    evalStringArray.splice(index2, 0, "+");
+    evalStringArray.splice(index2, 1);
     console.log(evalStringArray);
+    input_var.value = negnum
   }
 }

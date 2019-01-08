@@ -47,7 +47,7 @@ input[type=image]{
   /*margin: 3px;   /* distance between buttons */
   border-radius: 8px;
   border: none;
-  position: absolute;
+  position: relative;
   margin-left: 4px;
   margin-top: 3px;
   font-family: 'Source Code Pro', monospace;
@@ -120,7 +120,8 @@ input[type=button]:hover{
   background: #D1EEEE;
   position: absolute;
   top: 327px;
-  left: 965px;
+  /* left: 965px; */
+  left: 647px;
   margin-left: 52px;
 }
 
@@ -133,7 +134,8 @@ input[type=button]:hover{
   background: #D1EEEE;
   position: absolute;
   top: 327px;
-  left: 1027px;
+  /* left: 1027px; */
+  left: 710px;
   margin-left: 52px;
 }
 
@@ -165,11 +167,13 @@ input[type=button]:hover{
   margin-left: 22px;
 }
 
+/* change to relative position */
 #im1 {
   background: #e8c7ff;
   position: absolute;
   top: 440px;
-  left: 836px;
+  /* left: 836px; */
+  left: 515px;
   margin-left: 52px;
 }
 
@@ -182,7 +186,8 @@ input[type=button]:hover{
   background: #e8c7ff;
   position: absolute;
   top: 440px;
-  left: 900px;
+  /* left: 900px; */
+  left: 580px;
   margin-left: 52px;
   z-index: 10;
 }
@@ -196,7 +201,8 @@ input[type=button]:hover{
   background: #e8c7ff;
   position: absolute;
   top: 440px;
-  left: 968px;
+  /* left: 968px; */
+  left: 647px;
   margin-left: 52px;
   z-index: 10;
 }
