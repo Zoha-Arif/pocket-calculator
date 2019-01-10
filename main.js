@@ -9,57 +9,1402 @@ function getNumber(num){
   input_var = document.getElementById('input');
   switch (num) {
     case 1:
+    if (input_var.value.length <= 10) {
       input_var.value += '1';
       evalStringArray.push('1');
+      if (input_var.value.includes(".") == false){
       if (input_var.value.length > 3) {
         //make an array. add comma to array. make it the output.
         if (input_var.value.length == 4) {
+          commas = [];
           for (var h = 0; h < input_var.value.length; h++){
-            var value = input_var.value[h];
-            commas.push(value);
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
           }
           commas.splice(1, 0, ",");
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
           input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
+      break;
+    case 2:
+    if (input_var.value.length <= 10) {
+      input_var.value += '2';
+        evalStringArray.push('2');
+        if (input_var.value.includes(".") == false){
+        if (input_var.value.length > 3) {
+          //make an array. add comma to array. make it the output.
+          if (input_var.value.length == 4) {
+            commas = [];
+            for (var h = 0; h < input_var.value.length; h++){
+              if (input_var.value[h] != ",") {
+                var value = input_var.value[h];
+                commas.push(value);
+              }
+            }
+            commas.splice(1, 0, ",");
+            var problem4 = commas.join('');
+            problem4 = problem4.replace(/ +/g, ' ');
+            input_var.value = '';
+            input_var.value = problem4;
+            console.log("commas:");
+            console.log(commas);
+          }
+          else if (input_var.value.length == 6) {
+            commas2 = [];
+            console.log("commas2:");
+            console.log(commas2);
+            for (var g = 0; g < input_var.value.length; g++){
+              if (input_var.value[g] == ",") {
+              }
+              else {
+                var value = input_var.value[g];
+                commas2.push(value);
+              }
+
+            }
+            commas2.splice(2, 0, ",");
+            var problem5 = commas2.join('');
+            problem5 = problem5.replace(/ +/g, ' ');
+            console.log(commas2);
+            console.log("problem5:");
+            console.log(problem5);
+            input_var.value = '';
+            input_var.value = problem5;
+          }
+          else if (input_var.value.length == 7) {
+            commas2 = [];
+            console.log("commas2:");
+            console.log(commas2);
+            for (var g = 0; g < input_var.value.length; g++){
+              if (input_var.value[g] == ",") {
+              }
+              else {
+                var value = input_var.value[g];
+                commas2.push(value);
+              }
+
+            }
+            commas2.splice(3, 0, ",");
+            var problem5 = commas2.join('');
+            problem5 = problem5.replace(/ +/g, ' ');
+            console.log(commas2);
+            console.log("problem5:");
+            console.log(problem5);
+            input_var.value = '';
+            input_var.value = problem5;
+          }
+          else if (input_var.value.length == 8) {
+            commas2 = [];
+            console.log("commas2:");
+            console.log(commas2);
+            for (var g = 0; g < input_var.value.length; g++){
+              if (input_var.value[g] == ",") {
+              }
+              else {
+                var value = input_var.value[g];
+                commas2.push(value);
+              }
+
+            }
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+            var problem5 = commas2.join('');
+            problem5 = problem5.replace(/ +/g, ' ');
+            console.log(commas2);
+            console.log("problem5:");
+            console.log(problem5);
+            input_var.value = '';
+            input_var.value = problem5;
+          }
+          else if (input_var.value.length == 10) {
+            commas2 = [];
+            console.log("commas2:");
+            console.log(commas2);
+            for (var g = 0; g < input_var.value.length; g++){
+              if (input_var.value[g] == ",") {
+              }
+              else {
+                var value = input_var.value[g];
+                commas2.push(value);
+              }
+
+            }
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+            var problem5 = commas2.join('');
+            problem5 = problem5.replace(/ +/g, ' ');
+            console.log(commas2);
+            console.log("problem5:");
+            console.log(problem5);
+            input_var.value = '';
+            input_var.value = problem5;
+          }
+          else if (input_var.value.length == 11) {
+            commas2 = [];
+            console.log("commas2:");
+            console.log(commas2);
+            for (var g = 0; g < input_var.value.length; g++){
+              if (input_var.value[g] == ",") {
+              }
+              else {
+                var value = input_var.value[g];
+                commas2.push(value);
+              }
+
+            }
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+            var problem5 = commas2.join('');
+            problem5 = problem5.replace(/ +/g, ' ');
+            console.log(commas2);
+            console.log("problem5:");
+            console.log(problem5);
+            input_var.value = '';
+            input_var.value = problem5;
+          }
+        }
         }
       }
       break;
-    case 2:
-      input_var.value += '2';
-        evalStringArray.push('2');
-      break;
     case 3:
+    if (input_var.value.length <= 10) {
       input_var.value += '3';
       evalStringArray.push('3');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 4:
+    if (input_var.value.length <= 10) {
       input_var.value += '4';
       evalStringArray.push('4');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 5:
+    if (input_var.value.length <= 10) {
       input_var.value += '5';
       evalStringArray.push('5');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 6:
+    if (input_var.value.length <= 10) {
       input_var.value += '6';
       evalStringArray.push('6');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 7:
+    if (input_var.value.length <= 10) {
       input_var.value += '7';
       evalStringArray.push('7');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 8:
+    if (input_var.value.length <= 10) {
       input_var.value += '8';
       evalStringArray.push('8');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 9:
+    if (input_var.value.length <= 10) {
       input_var.value += '9';
       evalStringArray.push('9');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
       break;
     case 0:
       input_var.value += '0';
       evalStringArray.push('0');
+      if (input_var.value.includes(".") == false){
+      if (input_var.value.length > 3) {
+        //make an array. add comma to array. make it the output.
+        if (input_var.value.length == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+          console.log("commas:");
+          console.log(commas);
+        }
+        else if (input_var.value.length == 6) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 7) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 8) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 10) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (input_var.value.length == 11) {
+          commas2 = [];
+          console.log("commas2:");
+          console.log(commas2);
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          console.log(commas2);
+          console.log("problem5:");
+          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
       break;
     default:
       if (!input_var.value.includes('.')){
