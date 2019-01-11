@@ -1269,6 +1269,7 @@ function getNumber(num){
     }
       break;
     case 0:
+      if (input_var.value.length <= 10) {
       input_var.value += '0';
       evalStringArray.push('0');
       if (input_var.value.includes(".") == false){
@@ -1403,6 +1404,7 @@ function getNumber(num){
           input_var.value = '';
           input_var.value = problem5;
         }
+      }
       }
       }
       break;
