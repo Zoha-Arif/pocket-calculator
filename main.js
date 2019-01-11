@@ -1409,10 +1409,12 @@ function getNumber(num){
       }
       break;
     default:
+      if (input_var.value.length <= 10) {
       if (!input_var.value.includes('.')){
         input_var.value += ".";
         evalStringArray.push('.');
       }
+      }  
       break;
   }
 
