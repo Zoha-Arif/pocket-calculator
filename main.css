@@ -14,8 +14,22 @@ table {
 
 #input {
   height: 50px;
+  width: 405px; 
   padding: 5px;
   font-size: 210%;
+  text-align: right;
+  border: none;
+  border-radius: 5px 5px 0px 0px;
+  /* box-shadow: 2px 2px 2px black; */
+  font-family: 'Source Code Pro', monospace;
+  color: black;
+}
+
+#input_ans {
+  height: 20px;
+  width: 405px;
+  padding: 5px;
+  font-size: 100%;
   text-align: right;
   border: none;
   border-radius: 5px 5px 0px 0px;

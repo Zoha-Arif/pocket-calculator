@@ -1414,9 +1414,56 @@ function getNumber(num){
           input_var.value += ".";
           evalStringArray.push('.');
         }
-      }  
+      }
       break;
-  }
+    }
+
+      var z = 0;
+      for (var j = 1; j < evalStringArray.length;){
+        if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
+          evalStringArray.splice(j, 1);
+          // evalStringArray.splice(z, 1);
+          console.log("j:");
+          console.log(j);
+          console.log("z:");
+          console.log(z);
+          console.log(evalStringArray);
+          j = 1;
+          z = 0;
+        }
+        else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "-")) {
+          evalStringArray.splice(j, 1);
+
+          //evalStringArray.splice(z, 1);
+          j = 1;
+          z = 0;
+        }
+
+        else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "/")) {
+          evalStringArray.splice(j, 1);
+          //evalStringArray.splice(z, 1)
+          j = 1;
+          z = 0;
+        }
+
+        else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "*")) {
+          evalStringArray.splice(j, 1);
+          //evalStringArray.splice(z, 1);
+          j = 1;
+          z = 0;
+        }
+
+        else {
+          z++;
+          j++;
+        }
+      }
+
+      var problem = evalStringArray.join('');
+      problem = problem.replace(/ +/g, ' ');
+      console.log(problem);
+      var evaluation = eval(problem);
+      input_ans.value = evaluation;
 
   /* if (!executed){
     num01 = input_var.value;
@@ -1470,6 +1517,7 @@ function getOperand(operand){
 function clearScreen(){
   document.getElementById('input').value = '';
   evalStringArray = [];
+  document.getElementById('input_ans').value = ''; 
 }
 
 function answer(num1, num2, operand){
@@ -1539,7 +1587,7 @@ console.log(evalStringArray);
   console.log(problem);
   var evaluation = eval(problem);
   input_var.value = evaluation;
-  evalStringArray = [];
+  input_ans.value = "";
   /*
   var num1 = num01;
   console.log(num1);
