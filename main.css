@@ -14,7 +14,7 @@ table {
 
 #input {
   height: 50px;
-  width: 405px; 
+  width: 405px;
   padding: 5px;
   font-size: 210%;
   text-align: right;
@@ -62,8 +62,8 @@ input[type=image]{
   border-radius: 8px;
   border: none;
   position: relative;
-  margin-left: 4px;
-  margin-top: 3px;
+  margin-left: 3px;
+  margin-top: 2px;
   font-family: 'Source Code Pro', monospace;
   font-weight: 700;
   font-size: 20px;
@@ -131,30 +131,26 @@ input[type=button]:hover{
 }
 
 #blue5 {
-  background: #D1EEEE;
-  position: absolute;
-  top: 327px;
-  /* left: 965px; */
-  left: 647px;
-  margin-left: 52px;
+  background: #e8c7ff;
+  position: relative;
+  margin-left: 3px;
+  margin-top: 5px;
 }
 
 #blue5:hover {
-  background: #E0EEEE;
+  background: #f2e1ff;
   cursor: pointer;
 }
 
 #blue6 {
-  background: #D1EEEE;
-  position: absolute;
-  top: 327px;
-  /* left: 1027px; */
-  left: 710px;
-  margin-left: 52px;
+  background: #e8c7ff;
+  position: relative;
+  margin-left: 3px;
+  margin-top: 5px;
 }
 
 #blue6:hover {
-  background: #E0EEEE;
+  background: #f2e1ff;
   cursor: pointer;
 }
 
@@ -163,16 +159,19 @@ input[type=button]:hover{
 }
 
 #blue7:hover {
-  background: #ffe8c7;
+  background: #f2e1ff;
   cursor: pointer;
 }
 
-#purp5 {
-  background: #e8c7ff;
+#purp6 {
+  background: #D1EEEE;
+  position: relative;
+  margin-left: 3px;
+  margin-top: 5px;
 }
 
-#purp5:hover {
-  background: #f2e1ff;
+#purp6:hover {
+  background: #E0EEEE;
   cursor: pointer;
 }
 
@@ -184,11 +183,12 @@ input[type=button]:hover{
 /* change to relative position */
 #im1 {
   background: #e8c7ff;
-  position: absolute;
-  top: 440px;
+  position: relative;
+  /* top: 10px; */
   /* left: 836px; */
-  left: 515px;
-  margin-left: 52px;
+  /* left: 515px; */
+  margin-left: 3px;
+  margin-top: 5px;
 }
 
 #im1:hover {
@@ -198,11 +198,11 @@ input[type=button]:hover{
 
 #im2 {
   background: #e8c7ff;
-  position: absolute;
-  top: 440px;
+  position: relative;
+  /* top: 10px; */
   /* left: 900px; */
-  left: 580px;
-  margin-left: 52px;
+  margin-left: 5px;
+  margin-top: 5px;
   z-index: 10;
 }
 
@@ -213,11 +213,12 @@ input[type=button]:hover{
 
 #im3 {
   background: #e8c7ff;
-  position: absolute;
-  top: 440px;
+  position: relative;
+  /* top: 10px; */
   /* left: 968px; */
-  left: 647px;
-  margin-left: 52px;
+  /* left: 647px; */
+  margin-left: 3px;
+  margin-top: 5px;
   z-index: 10;
 }
 
