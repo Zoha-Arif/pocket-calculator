@@ -2024,7 +2024,7 @@ function answer(num1, num2, operand){
   var k = input_ans.value;
   input_var.value = k;
   input_ans.value = "";
-
+/*
 if (!input_var.value.includes('.')){
   if (input_var.value.length > 3) {
     //make an array. add comma to array. make it the output.
@@ -2255,7 +2255,7 @@ else if (input_var.value.includes('.')){
         }
 
   }
-
+/*
   /*
   var num1 = num01;
   console.log(num1);
