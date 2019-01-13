@@ -1623,7 +1623,6 @@ function getNumber(num){
 
       var problem = evalStringArray.join('');
       problem = problem.replace(/ +/g, ' ');
-      console.log(problem);
       var evaluation = eval(problem);
       input_ans.value = evaluation;
 
@@ -2248,6 +2247,134 @@ function Negation(){
         input_var.value = '';
         input_var.value = problem5;
       }
+    }
+  }
+  var problem = evalStringArray.join('');
+  problem = problem.replace(/ +/g, ' ');
+  var evaluation = eval(problem);
+  input_ans.value = evaluation;
+
+  if (input_ans.value.length > 3) {
+    //make an array. add comma to array. make it the output.
+    if (input_ans.value.length == 4) {
+      commas = [];
+      for (var h = 0; h < input_ans.value.length; h++){
+        if (input_ans.value[h] != ",") {
+          var value = input_ans.value[h];
+          commas.push(value);
+        }
+      }
+      commas.splice(1, 0, ",");
+      var problem4 = commas.join('');
+      problem4 = problem4.replace(/ +/g, ' ');
+      input_ans.value = '';
+      input_ans.value = problem4;
+      console.log("commas4:");
+      console.log(commas);
+    }
+    else if (input_ans.value.length == 5) {
+      commas2 = [];
+      for (var g = 0; g < input_ans.value.length; g++){
+        if (input_ans.value[g] == ",") {
+        }
+        else {
+          var value = input_ans.value[g];
+          commas2.push(value);
+        }
+
+      }
+      commas2.splice(2, 0, ",");
+      var problem5 = commas2.join('');
+      problem5 = problem5.replace(/ +/g, ' ');
+      console.log("commas6:");
+      console.log(commas2);
+      console.log("working!");
+      input_ans.value = '';
+      input_ans.value = problem5;
+    }
+    else if (input_ans.value.length == 6) {
+      commas2 = [];
+      for (var g = 0; g < input_ans.value.length; g++){
+        if (input_ans.value[g] == ",") {
+        }
+        else {
+          var value = input_ans.value[g];
+          commas2.push(value);
+        }
+
+      }
+      commas2.splice(3, 0, ",");
+      var problem5 = commas2.join('');
+      problem5 = problem5.replace(/ +/g, ' ');
+      console.log("commas7:");
+      console.log(commas2);
+      input_ans.value = '';
+      input_ans.value = problem5;
+    }
+    else if (input_ans.value.length == 7) {
+      commas2 = [];
+      for (var g = 0; g < input_ans.value.length; g++){
+        if (input_ans.value[g] == ",") {
+        }
+        else {
+          var value = input_ans.value[g];
+          commas2.push(value);
+        }
+
+      }
+      commas2.splice(1, 0, ",");
+      commas2.splice(5, 0, ",");
+      var problem5 = commas2.join('');
+      problem5 = problem5.replace(/ +/g, ' ');
+      console.log("commas8:");
+      console.log(commas2);
+      input_ans.value = '';
+      input_ans.value = problem5;
+    }
+    else if (input_ans.value.length == 8) {
+      commas2 = [];
+      for (var g = 0; g < input_ans.value.length; g++){
+        if (input_ans.value[g] == ",") {
+        }
+        else {
+          var value = input_ans.value[g];
+          commas2.push(value);
+        }
+
+      }
+      commas2.splice(2, 0, ",");
+      commas2.splice(6, 0, ",");
+      var problem5 = commas2.join('');
+      problem5 = problem5.replace(/ +/g, ' ');
+      console.log("commas10:");
+      console.log(commas2);
+      input_ans.value = '';
+      input_ans.value = problem5;
+    }
+    else if (input_ans.value.length == 9) {
+      commas2 = [];
+      for (var g = 0; g < input_ans.value.length; g++){
+        if (input_ans.value[g] == ",") {
+        }
+        else {
+          var value = input_ans.value[g];
+          commas2.push(value);
+        }
+
+      }
+      commas2.splice(3, 0, ",");
+      commas2.splice(7, 0, ",");
+      var problem5 = commas2.join('');
+      problem5 = problem5.replace(/ +/g, ' ');
+      console.log("commas11:");
+      console.log(commas2);
+      input_ans.value = '';
+      input_ans.value = problem5;
+    }
+    else {
+      var evaluation = eval(problem);
+      evaluation = Number(evaluation);
+      input_ans.value = evaluation.toExponential();
     }
   }
 }
