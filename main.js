@@ -4,18 +4,28 @@ var executed = false;
 var num02;
 var evalStringArray = [];
 var commas = [];
+var lengthin = 0;
+var indy = 0;
 
 function getNumber(num){
   input_var = document.getElementById('input');
   switch (num) {
     case 1:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '1';
       evalStringArray.push('1');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -23,18 +33,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -44,19 +56,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -66,19 +79,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -88,20 +101,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -111,20 +125,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -134,13 +149,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -149,153 +167,21 @@ function getNumber(num){
     }
       break;
     case 2:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '2';
-        evalStringArray.push('2');
-        if (input_var.value.includes(".") == false){
-        if (input_var.value.length > 3) {
-          //make an array. add comma to array. make it the output.
-          if (input_var.value.length == 4) {
-            commas = [];
-            for (var h = 0; h < input_var.value.length; h++){
-              if (input_var.value[h] != ",") {
-                var value = input_var.value[h];
-                commas.push(value);
-              }
-            }
-            commas.splice(1, 0, ",");
-            var problem4 = commas.join('');
-            problem4 = problem4.replace(/ +/g, ' ');
-            input_var.value = '';
-            input_var.value = problem4;
-            console.log("commas:");
-            console.log(commas);
-          }
-          else if (input_var.value.length == 6) {
-            commas2 = [];
-            console.log("commas2:");
-            console.log(commas2);
-            for (var g = 0; g < input_var.value.length; g++){
-              if (input_var.value[g] == ",") {
-              }
-              else {
-                var value = input_var.value[g];
-                commas2.push(value);
-              }
-
-            }
-            commas2.splice(2, 0, ",");
-            var problem5 = commas2.join('');
-            problem5 = problem5.replace(/ +/g, ' ');
-            console.log(commas2);
-            console.log("problem5:");
-            console.log(problem5);
-            input_var.value = '';
-            input_var.value = problem5;
-          }
-          else if (input_var.value.length == 7) {
-            commas2 = [];
-            console.log("commas2:");
-            console.log(commas2);
-            for (var g = 0; g < input_var.value.length; g++){
-              if (input_var.value[g] == ",") {
-              }
-              else {
-                var value = input_var.value[g];
-                commas2.push(value);
-              }
-
-            }
-            commas2.splice(3, 0, ",");
-            var problem5 = commas2.join('');
-            problem5 = problem5.replace(/ +/g, ' ');
-            console.log(commas2);
-            console.log("problem5:");
-            console.log(problem5);
-            input_var.value = '';
-            input_var.value = problem5;
-          }
-          else if (input_var.value.length == 8) {
-            commas2 = [];
-            console.log("commas2:");
-            console.log(commas2);
-            for (var g = 0; g < input_var.value.length; g++){
-              if (input_var.value[g] == ",") {
-              }
-              else {
-                var value = input_var.value[g];
-                commas2.push(value);
-              }
-
-            }
-            commas2.splice(1, 0, ",");
-            commas2.splice(5, 0, ",");
-            var problem5 = commas2.join('');
-            problem5 = problem5.replace(/ +/g, ' ');
-            console.log(commas2);
-            console.log("problem5:");
-            console.log(problem5);
-            input_var.value = '';
-            input_var.value = problem5;
-          }
-          else if (input_var.value.length == 10) {
-            commas2 = [];
-            console.log("commas2:");
-            console.log(commas2);
-            for (var g = 0; g < input_var.value.length; g++){
-              if (input_var.value[g] == ",") {
-              }
-              else {
-                var value = input_var.value[g];
-                commas2.push(value);
-              }
-
-            }
-            commas2.splice(2, 0, ",");
-            commas2.splice(6, 0, ",");
-            var problem5 = commas2.join('');
-            problem5 = problem5.replace(/ +/g, ' ');
-            console.log(commas2);
-            console.log("problem5:");
-            console.log(problem5);
-            input_var.value = '';
-            input_var.value = problem5;
-          }
-          else if (input_var.value.length == 11) {
-            commas2 = [];
-            console.log("commas2:");
-            console.log(commas2);
-            for (var g = 0; g < input_var.value.length; g++){
-              if (input_var.value[g] == ",") {
-              }
-              else {
-                var value = input_var.value[g];
-                commas2.push(value);
-              }
-
-            }
-            commas2.splice(3, 0, ",");
-            commas2.splice(7, 0, ",");
-            var problem5 = commas2.join('');
-            problem5 = problem5.replace(/ +/g, ' ');
-            console.log(commas2);
-            console.log("problem5:");
-            console.log(problem5);
-            input_var.value = '';
-            input_var.value = problem5;
-          }
-        }
-        }
-      }
-      break;
-    case 3:
-    if (input_var.value.length <= 10) {
-      input_var.value += '3';
-      evalStringArray.push('3');
+      evalStringArray.push('2');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -303,18 +189,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -324,19 +212,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -346,19 +235,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -368,20 +257,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -391,20 +281,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -414,13 +305,172 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+      }
+      }
+    }
+      break;
+    case 3:
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
+      input_var.value += '3';
+      evalStringArray.push('3');
+      if (input_var.value.includes(".") == false){
+      if (lengthin > 3) {
+        if (lengthin == 4) {
+          commas = [];
+          for (var h = 0; h < input_var.value.length; h++){
+            if (input_var.value[h] != ",") {
+              var value = input_var.value[h];
+              commas.push(value);
+            }
+          }
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem4;
+        }
+        else if (lengthin == 6) {
+          commas2 = [];
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (lengthin == 7) {
+          commas2 = [];
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (lengthin == 8) {
+          commas2 = [];
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (lengthin == 10) {
+          commas2 = [];
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_var.value = '';
+          input_var.value = problem5;
+        }
+        else if (lengthin == 11) {
+          commas2 = [];
+          for (var g = 0; g < input_var.value.length; g++){
+            if (input_var.value[g] == ",") {
+            }
+            else {
+              var value = input_var.value[g];
+              commas2.push(value);
+            }
+
+          }
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -429,13 +479,21 @@ function getNumber(num){
     }
       break;
     case 4:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '4';
       evalStringArray.push('4');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -443,18 +501,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -464,19 +524,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -486,19 +547,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -508,20 +569,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -531,20 +593,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -554,13 +617,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -569,13 +635,21 @@ function getNumber(num){
     }
       break;
     case 5:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '5';
       evalStringArray.push('5');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -583,18 +657,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -604,19 +680,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -626,19 +703,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -648,20 +725,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -671,20 +749,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -694,13 +773,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -709,13 +791,21 @@ function getNumber(num){
     }
       break;
     case 6:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '6';
       evalStringArray.push('6');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -723,18 +813,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -744,19 +836,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -766,19 +859,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -788,20 +881,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -811,20 +905,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -834,13 +929,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -849,13 +947,21 @@ function getNumber(num){
     }
       break;
     case 7:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '7';
       evalStringArray.push('7');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -863,18 +969,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -884,19 +992,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -906,19 +1015,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -928,20 +1037,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -951,20 +1061,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -974,13 +1085,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -989,13 +1103,21 @@ function getNumber(num){
     }
       break;
     case 8:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '8';
       evalStringArray.push('8');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -1003,18 +1125,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1024,19 +1148,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1046,19 +1171,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1068,20 +1193,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1091,20 +1217,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1114,13 +1241,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -1129,13 +1259,21 @@ function getNumber(num){
     }
       break;
     case 9:
-    if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '9';
       evalStringArray.push('9');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -1143,18 +1281,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1164,19 +1304,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1186,19 +1327,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1208,20 +1349,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1231,20 +1373,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1254,13 +1397,16 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
@@ -1269,13 +1415,21 @@ function getNumber(num){
     }
       break;
     case 0:
-      if (input_var.value.length <= 10) {
+    indy = 0;
+    lengthin = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin = Number(input_var.value.length);
+      indy = 1;
+    }
+    else {
+      lengthin = input_var.value.length + 1;
+    }
+    if (lengthin <= 11) {
       input_var.value += '0';
       evalStringArray.push('0');
       if (input_var.value.includes(".") == false){
-      if (input_var.value.length > 3) {
-        //make an array. add comma to array. make it the output.
-        if (input_var.value.length == 4) {
+      if (lengthin > 3) {
+        if (lengthin == 4) {
           commas = [];
           for (var h = 0; h < input_var.value.length; h++){
             if (input_var.value[h] != ",") {
@@ -1283,18 +1437,20 @@ function getNumber(num){
               commas.push(value);
             }
           }
-          commas.splice(1, 0, ",");
+          if (indy == 1) {
+            commas.splice(2, 0, ",");
+            indy = 0;
+          }
+          else {
+            commas.splice(1, 0, ",");
+          }
           var problem4 = commas.join('');
           problem4 = problem4.replace(/ +/g, ' ');
           input_var.value = '';
           input_var.value = problem4;
-          console.log("commas:");
-          console.log(commas);
         }
-        else if (input_var.value.length == 6) {
+        else if (lengthin == 6) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1304,19 +1460,20 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
+          if (indy == 1) {
+            commas2.splice(3, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+          }
+          /*copy the above if else statement to every single line of code pls.*/
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 7) {
+        else if (lengthin == 7) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1326,19 +1483,19 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 8) {
+        else if (lengthin == 8) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1348,20 +1505,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(1, 0, ",");
-          commas2.splice(5, 0, ",");
+          if (indy == 1){
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
+          else {
+            commas2.splice(1, 0, ",");
+            commas2.splice(5, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 10) {
+        else if (lengthin == 10) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1371,20 +1529,21 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(2, 0, ",");
-          commas2.splice(6, 0, ",");
+          if (indy == 1){
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
+          else {
+            commas2.splice(2, 0, ",");
+            commas2.splice(6, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
-        else if (input_var.value.length == 11) {
+        else if (lengthin == 11) {
           commas2 = [];
-          console.log("commas2:");
-          console.log(commas2);
           for (var g = 0; g < input_var.value.length; g++){
             if (input_var.value[g] == ",") {
             }
@@ -1394,19 +1553,22 @@ function getNumber(num){
             }
 
           }
-          commas2.splice(3, 0, ",");
-          commas2.splice(7, 0, ",");
+          if (indy == 1){
+            commas2.splice(4, 0, ",");
+            commas2.splice(8, 0, ",");
+          }
+          else {
+            commas2.splice(3, 0, ",");
+            commas2.splice(7, 0, ",");
+          }
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log(commas2);
-          console.log("problem5:");
-          console.log(problem5);
           input_var.value = '';
           input_var.value = problem5;
         }
       }
       }
-      }
+    }
       break;
     default:
       if (input_var.value.length <= 10) {
@@ -1651,22 +1813,12 @@ function answer(num1, num2, operand){
     if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
       evalStringArray.splice(j, 1);
       // evalStringArray.splice(z, 1);
-      console.log("j:");
-      console.log(j);
-      console.log("z:");
-      console.log(z);
-      console.log(evalStringArray);
       j = 1;
       z = 0;
     }
     else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "-")) {
       evalStringArray.splice(j, 1);
       //evalStringArray.splice(z, 1);
-      console.log("j:");
-      console.log(j);
-      console.log("z:");
-      console.log(z);
-      console.log(evalStringArray);
       j = 1;
       z = 0;
     }
@@ -1674,11 +1826,6 @@ function answer(num1, num2, operand){
     else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "/")) {
       evalStringArray.splice(j, 1);
       //evalStringArray.splice(z, 1);
-      console.log("j:");
-      console.log(j);
-      console.log("z:");
-      console.log(z);
-      console.log(evalStringArray);
       j = 1;
       z = 0;
     }
@@ -1686,29 +1833,17 @@ function answer(num1, num2, operand){
     else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "*")) {
       evalStringArray.splice(j, 1);
       //evalStringArray.splice(z, 1);
-      console.log("j:");
-      console.log(j);
-      console.log("z:");
-      console.log(z);
-      console.log(evalStringArray);
       j = 1;
       z = 0;
     }
 
     else {
-      console.log("j:");
-      console.log(j);
-      console.log("z:");
-      console.log(z);
-      console.log(evalStringArray);
       z++;
       j++;
     }
   }
-console.log(evalStringArray);
   var problem = evalStringArray.join('');
   problem = problem.replace(/ +/g, ' ');
-  console.log(problem);
   var evaluation = eval(problem);
   input_var.value = evaluation;
   input_ans.value = "";
@@ -1728,8 +1863,6 @@ console.log(evalStringArray);
       problem4 = problem4.replace(/ +/g, ' ');
       input_var.value = '';
       input_var.value = problem4;
-      console.log("commas4:");
-      console.log(commas);
     }
     else if (input_var.value.length == 5) {
       commas2 = [];
@@ -1745,9 +1878,7 @@ console.log(evalStringArray);
       commas2.splice(2, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas6:");
       console.log(commas2);
-      console.log("working!");
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1765,8 +1896,6 @@ console.log(evalStringArray);
       commas2.splice(3, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas7:");
-      console.log(commas2);
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1785,8 +1914,6 @@ console.log(evalStringArray);
       commas2.splice(5, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas8:");
-      console.log(commas2);
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1805,8 +1932,6 @@ console.log(evalStringArray);
       commas2.splice(6, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas10:");
-      console.log(commas2);
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1825,8 +1950,6 @@ console.log(evalStringArray);
       commas2.splice(7, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas11:");
-      console.log(commas2);
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1870,11 +1993,6 @@ function Negation(){
     }
   }
 
-  console.log("final count:");
-  console.log(count);
-  console.log("index2:");
-  console.log(index2);
-
   negated_num = [];
   for (var s = 0; s < count; s++){
     var push = evalStringArray[index2];
@@ -1884,21 +2002,130 @@ function Negation(){
 
   var problem1 = negated_num.join('');
   problem1 = problem1.replace(/ +/g, ' ');
-  console.log("number:");
-  console.log(problem1);
-  console.log(negated_num);
 
   var negnum = problem1 * (-1);
-  console.log("neg:");
-  console.log(negnum);
 
   if (negnum < 0){
     index1 = evalStringArray.length;
     index2 = index1;
     index2 = index2 - count;
     evalStringArray.splice(index2, 0, "-");
-    console.log(evalStringArray);
     input_var.value = negnum;
+    var lengthin2 = 0;
+    var indy2 = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin2 = Number(input_var.value.length) - 1;
+      indy2 = 1;
+    }
+    else {
+      lengthin2 = input_var.value.length;
+    }
+    console.log("lengthin2: " + lengthin2);
+    if (lengthin2 > 3) {
+      //make an array. add comma to array. make it the output.
+      if (lengthin2 == 4) {
+        commas = [];
+        for (var h = 0; h < input_var.value.length; h++){
+          if (input_var.value[h] != ",") {
+            var value = input_var.value[h];
+            commas.push(value);
+          }
+        }
+        commas.splice(2, 0, ",");
+        var problem4 = commas.join('');
+        problem4 = problem4.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem4;
+      }
+      else if (lengthin2 == 5) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin2 == 6) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(4, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin2 == 7) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        commas2.splice(6, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin2  == 8) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        commas2.splice(7, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin2 == 9) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(4, 0, ",");
+        commas2.splice(8, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+    }
   }
 
   else {
@@ -1906,7 +2133,121 @@ function Negation(){
     index2 = index1;
     index2 = index2 - count;
     evalStringArray.splice(index2, 1);
-    console.log(evalStringArray);
-    input_var.value = negnum
+    input_var.value = negnum;
+    var lengthin1 = 0;
+    var indy1 = 0;
+    if (input_var.value.includes("-") == true){
+      lengthin1 = Number(input_var.value.length);
+      indy1 = 1;
+    }
+    else {
+      lengthin1 = input_var.value.length;
+    }
+    console.log("lengthin1: " + lengthin1);
+    if (lengthin1 > 3) {
+      //make an array. add comma to array. make it the output.
+      if (lengthin1 == 4) {
+        commas = [];
+        for (var h = 0; h < input_var.value.length; h++){
+          if (input_var.value[h] != ",") {
+            var value = input_var.value[h];
+            commas.push(value);
+          }
+        }
+        commas.splice(1, 0, ",");
+        var problem4 = commas.join('');
+        problem4 = problem4.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem4;
+      }
+      else if (lengthin1 == 5) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin1 == 6) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin1 == 7) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(1, 0, ",");
+        commas2.splice(5, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin1 == 8) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        commas2.splice(6, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+      else if (lengthin1 == 9) {
+        commas2 = [];
+        for (var g = 0; g < input_var.value.length; g++){
+          if (input_var.value[g] == ",") {
+          }
+          else {
+            var value = input_var.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        commas2.splice(7, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_var.value = '';
+        input_var.value = problem5;
+      }
+    }
   }
 }
