@@ -2022,7 +2022,7 @@ function answer(num1, num2, operand){
   var evaluation = eval(problem);
   /* input_var.value = evaluation; */
   var k = input_ans.value;
-  input_var.value = k; 
+  input_var.value = k;
   input_ans.value = "";
 
 if (!input_var.value.includes('.')){
@@ -2269,15 +2269,15 @@ else if (input_var.value.includes('.')){
   }
 }
 
-function Negation(){
-  var index1 = evalStringArray.length;
+function Negation1(){
+  var index1 = input_var.value.length;
   var index2 = index1 - 1;
   var count = 1;
   var sign = false;
   var sign1 = false;
 
-  for(var i = index2; i != 0; i--){
-    if (evalStringArray[i] == "*") {
+  //for(var i = index2; i != 0; i--){
+  /*  if (evalStringArray[i] == "*") {
       sign = true;
       sign1 == true;
     }
@@ -2296,10 +2296,8 @@ function Negation(){
     else if (sign == false) {
         count = count + 1;
     }
-  }
-
-  negated_num = [];
-
+  } */
+/*
   for (var s = 0; s < count; s++){
     var push = evalStringArray[index2];
     negated_num.splice(0, 0, push);
@@ -2310,20 +2308,28 @@ function Negation(){
     if (negated_num[gg] == "*"){
       negated_num.splice(gg, 1);
     }
-  }
-
+    if (negated_num[gg] == "/"){
+      negated_num.splice(gg, 1);
+    }
+    if (negated_num[gg] == "/"){
+      negated_num.splice(gg, 1);
+    }
+  } */
+  negated_num = [];
   console.log("negnum2: " + negated_num);
   var problem1 = negated_num.join('');
   problem1 = problem1.replace(/ +/g, ' ');
   console.log("negnum1: " + problem1);
-  var negnum = problem1 * (-1);
+
+  var negnum = Number(input_var.value) * (-1);
   console.log("negnum: " + negnum);
 
   if (negnum < 0){
     index1 = evalStringArray.length;
     index2 = index1;
-    index2 = (index2 - count) + 1;
-    evalStringArray.splice(index2, 0, "-");
+    index2 = (index2 - count);
+    evalStringArray.splice(0, 0, "-");
+    console.log("evalstring: " + evalStringArray);
     input_var.value = negnum;
     var lengthin2 = 0;
     var indy2 = 0;
@@ -2678,4 +2684,7 @@ function Negation(){
       input_ans.value = evaluation.toExponential();
     }
   }
+}
+function Negation() {
+  /* Restructure negation function */
 }
