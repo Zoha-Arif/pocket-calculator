@@ -1936,6 +1936,8 @@ function answer(num1, num2, operand){
       var evaluation = eval(problem);
       evaluation = Number(evaluation);
       input_var.value = evaluation.toExponential();
+      console.log("working:");
+      console.log(input_var.value.length);
     }
   }
 
@@ -1946,6 +1948,11 @@ function answer(num1, num2, operand){
   console.log(operand);
   var num2 = num02;
   console.log(num2);*/
+
+  if (input_var.value.length > 20){
+    document.getElementById("input").style.fontSize = "150%";
+    console.log("working1:");
+  }
 }
 
 function Negation(){
