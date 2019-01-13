@@ -6,6 +6,7 @@ var evalStringArray = [];
 var commas = [];
 var lengthin = 0;
 var indy = 0;
+var zero = 0;
 
 function getNumber(num){
   input_var = document.getElementById('input');
@@ -20,9 +21,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '1';
-      evalStringArray.push('1');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".1");
+        evalStringArray.push('1');
+      }
+      else {
+        input_var.value += '1';
+        evalStringArray.push('1');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -176,9 +183,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '2';
-      evalStringArray.push('2');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".2");
+        evalStringArray.push('2');
+      }
+      else {
+        input_var.value += '2';
+        evalStringArray.push('2');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -332,9 +345,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '3';
-      evalStringArray.push('3');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".3");
+        evalStringArray.push('3');
+      }
+      else {
+        input_var.value += '3';
+        evalStringArray.push('3');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -488,9 +507,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '4';
-      evalStringArray.push('4');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".4");
+        evalStringArray.push('4');
+      }
+      else {
+        input_var.value += '4';
+        evalStringArray.push('4');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -644,9 +669,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '5';
-      evalStringArray.push('5');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".5");
+        evalStringArray.push('5');
+      }
+      else {
+        input_var.value += '5';
+        evalStringArray.push('5');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -800,9 +831,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '6';
-      evalStringArray.push('6');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".6");
+        evalStringArray.push('6');
+      }
+      else {
+        input_var.value += '6';
+        evalStringArray.push('6');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -956,9 +993,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '7';
-      evalStringArray.push('7');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".7");
+        evalStringArray.push('7');
+      }
+      else {
+        input_var.value += '7';
+        evalStringArray.push('7');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -1112,9 +1155,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '8';
-      evalStringArray.push('8');
+    if (input_var.value.length < "11"){
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".8");
+        evalStringArray.push('8');
+      }
+      else {
+        input_var.value += '8';
+        evalStringArray.push('8');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -1268,9 +1317,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '9';
-      evalStringArray.push('9');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0") && (zero == 0)) {
+        input_var.value = input_var.value.replace(".0", ".9");
+        evalStringArray.push('9');
+      }
+      else {
+        input_var.value += '9';
+        evalStringArray.push('9');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -1415,6 +1470,7 @@ function getNumber(num){
     }
       break;
     case 0:
+    zero = 1;
     indy = 0;
     lengthin = 0;
     if (input_var.value.includes("-") == true){
@@ -1424,9 +1480,15 @@ function getNumber(num){
     else {
       lengthin = input_var.value.length + 1;
     }
-    if (lengthin <= 11) {
-      input_var.value += '0';
-      evalStringArray.push('0');
+    if (input_var.value.length < "11") {
+      if (input_var.value.includes(".0")) {
+        input_var.value = input_var.value.replace(".0", ".0");
+        evalStringArray.push('0');
+      }
+      else {
+        input_var.value += '0';
+        evalStringArray.push('0');
+      }
       if (input_var.value.includes(".") == false){
       if (lengthin > 3) {
         if (lengthin == 4) {
@@ -1571,10 +1633,16 @@ function getNumber(num){
     }
       break;
     default:
-      if (input_var.value.length <= 10) {
+      if (input_var.value.length < "11") {
         if (!input_var.value.includes('.')){
-          input_var.value += ".";
-          evalStringArray.push('.');
+          if(input_var.value == ''){
+            input_var.value += "0.0";
+            evalStringArray.push('0.');
+          }
+          else {
+            input_var.value += ".0";
+            evalStringArray.push('.');
+          }
         }
       }
       break;
@@ -1621,6 +1689,7 @@ function getNumber(num){
       var evaluation = eval(problem);
       input_ans.value = evaluation;
 
+if (!input_ans.value.includes('.')){
       if (input_ans.value.length > 3) {
         //make an array. add comma to array. make it the output.
         if (input_ans.value.length == 4) {
@@ -1731,17 +1800,141 @@ function getNumber(num){
           input_ans.value = evaluation.toExponential();
         }
       }
+    }
 
-  /* if (!executed){
-    num01 = input_var.value;
-    return num01;
-    executed = true;
-  }
+else if (input_ans.value.includes('.')){
+      var tells = input_ans.value.indexOf(".");
+      tells = tells;
+      console.log(tells);
+      if (tells > 3) {
+        //make an array. add comma to array. make it the output.
+        if (tells == 5) {
+          commas = [];
+          for (var h = 0; h < input_ans.value.length; h++){
+            if (input_ans.value[h] != ",") {
+              var value = input_ans.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(2, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem4;
+        }
+        else if (tells == 4) {
+          commas = [];
+          for (var h = 0; h < input_ans.value.length; h++){
+            if (input_ans.value[h] != ",") {
+              var value = input_ans.value[h];
+              commas.push(value);
+            }
+          }
+          commas.splice(1, 0, ",");
+          var problem4 = commas.join('');
+          problem4 = problem4.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem4;
+        }
 
-  else {
-    num02 = input_var.value;
-    return num02;
-  } */
+
+
+        else if (tells == 6) {
+          commas2 = [];
+          for (var g = 0; g < input_ans.value.length; g++){
+            if (input_ans.value[g] == ",") {
+            }
+            else {
+              var value = input_ans.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem5;
+        }
+        else if (tells == 7) {
+          commas2 = [];
+          for (var g = 0; g < input_ans.value.length; g++){
+            if (input_ans.value[g] == ",") {
+            }
+            else {
+              var value = input_ans.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(1, 0, ",");
+          commas2.splice(5, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem5;
+        }
+        else if (tells == 8) {
+          commas2 = [];
+          for (var g = 0; g < input_ans.value.length; g++){
+            if (input_ans.value[g] == ",") {
+            }
+            else {
+              var value = input_ans.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(2, 0, ",");
+          commas2.splice(6, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem5;
+        }
+        else if (tells == 9) {
+          commas2 = [];
+          for (var g = 0; g < input_ans.value.length; g++){
+            if (input_ans.value[g] == ",") {
+            }
+            else {
+              var value = input_ans.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem5;
+        }
+        /*else if (tells == 10) {
+          commas2 = [];
+          for (var g = 0; g < input_ans.value.length; g++){
+            if (input_ans.value[g] == ",") {
+            }
+            else {
+              var value = input_ans.value[g];
+              commas2.push(value);
+            }
+
+          }
+          commas2.splice(3, 0, ",");
+          commas2.splice(7, 0, ",");
+          var problem5 = commas2.join('');
+          problem5 = problem5.replace(/ +/g, ' ');
+          input_ans.value = '';
+          input_ans.value = problem5;
+        } */
+        else {
+          var evaluation = eval(problem);
+          evaluation = Number(evaluation);
+          input_ans.value = evaluation.toExponential();
+        }
+      }
+    }
 }
 //get the mathematical operation
 var operand1;
@@ -1785,6 +1978,8 @@ function clearScreen(){
   document.getElementById('input').value = '';
   evalStringArray = [];
   document.getElementById('input_ans').value = '';
+  document.getElementById("input").style.fontSize = "210%";
+  zero = 0;
 }
 
 function answer(num1, num2, operand){
@@ -1825,9 +2020,12 @@ function answer(num1, num2, operand){
   var problem = evalStringArray.join('');
   problem = problem.replace(/ +/g, ' ');
   var evaluation = eval(problem);
-  input_var.value = evaluation;
+  /* input_var.value = evaluation; */
+  var k = input_ans.value;
+  input_var.value = k; 
   input_ans.value = "";
 
+if (!input_var.value.includes('.')){
   if (input_var.value.length > 3) {
     //make an array. add comma to array. make it the output.
     if (input_var.value.length == 4) {
@@ -1939,6 +2137,123 @@ function answer(num1, num2, operand){
       console.log("working:");
       console.log(input_var.value.length);
     }
+}
+else if (input_var.value.includes('.')){
+          var tells = input_var.value.indexOf(".");
+          tells = tells;
+          console.log("answer" + tells);
+          if (tells > 3) {
+            //make an array. add comma to array. make it the output.
+            if (tells == 5) {
+              commas = [];
+              for (var h = 0; h < input_var.value.length; h++){
+                if (input_var.value[h] != ",") {
+                  var value = input_var.value[h];
+                  commas.push(value);
+                }
+              }
+              commas.splice(2, 0, ",");
+              var problem4 = commas.join('');
+              problem4 = problem4.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem4;
+            }
+            else if (tells == 4) {
+              commas = [];
+              for (var h = 0; h < input_var.value.length; h++){
+                if (input_var.value[h] != ",") {
+                  var value = input_ans.value[h];
+                  commas.push(value);
+                }
+              }
+              commas.splice(1, 0, ",");
+              var problem4 = commas.join('');
+              problem4 = problem4.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem4;
+            }
+
+
+
+            else if (tells == 6) {
+              commas2 = [];
+              for (var g = 0; g < input_var.value.length; g++){
+                if (input_var.value[g] == ",") {
+                }
+                else {
+                  var value = input_var.value[g];
+                  commas2.push(value);
+                }
+
+              }
+              commas2.splice(3, 0, ",");
+              var problem5 = commas2.join('');
+              problem5 = problem5.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem5;
+            }
+            else if (tells == 7) {
+              commas2 = [];
+              for (var g = 0; g < input_var.value.length; g++){
+                if (input_var.value[g] == ",") {
+                }
+                else {
+                  var value = input_var.value[g];
+                  commas2.push(value);
+                }
+
+              }
+              commas2.splice(1, 0, ",");
+              commas2.splice(5, 0, ",");
+              var problem5 = commas2.join('');
+              problem5 = problem5.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem5;
+            }
+            else if (tells == 8) {
+              commas2 = [];
+              for (var g = 0; g < input_var.value.length; g++){
+                if (input_var.value[g] == ",") {
+                }
+                else {
+                  var value = input_var.value[g];
+                  commas2.push(value);
+                }
+
+              }
+              commas2.splice(2, 0, ",");
+              commas2.splice(6, 0, ",");
+              var problem5 = commas2.join('');
+              problem5 = problem5.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem5;
+            }
+            else if (tells == 9) {
+              commas2 = [];
+              for (var g = 0; g < input_var.value.length; g++){
+                if (input_var.value[g] == ",") {
+                }
+                else {
+                  var value = input_var.value[g];
+                  commas2.push(value);
+                }
+
+              }
+              commas2.splice(3, 0, ",");
+              commas2.splice(7, 0, ",");
+              var problem5 = commas2.join('');
+              problem5 = problem5.replace(/ +/g, ' ');
+              input_var.value = '';
+              input_var.value = problem5;
+            }
+            else {
+              var evaluation = eval(problem);
+              evaluation = Number(evaluation);
+              input_var.value = evaluation.toExponential();
+            }
+          }
+        }
+
   }
 
   /*
@@ -1951,7 +2266,6 @@ function answer(num1, num2, operand){
 
   if (input_var.value.length > 20){
     document.getElementById("input").style.fontSize = "150%";
-    console.log("working1:");
   }
 }
 
