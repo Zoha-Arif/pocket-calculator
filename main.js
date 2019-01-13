@@ -1585,11 +1585,6 @@ function getNumber(num){
         if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
           evalStringArray.splice(j, 1);
           // evalStringArray.splice(z, 1);
-          console.log("j:");
-          console.log(j);
-          console.log("z:");
-          console.log(z);
-          console.log(evalStringArray);
           j = 1;
           z = 0;
         }
@@ -1641,8 +1636,6 @@ function getNumber(num){
           problem4 = problem4.replace(/ +/g, ' ');
           input_ans.value = '';
           input_ans.value = problem4;
-          console.log("commas4:");
-          console.log(commas);
         }
         else if (input_ans.value.length == 5) {
           commas2 = [];
@@ -1658,9 +1651,6 @@ function getNumber(num){
           commas2.splice(2, 0, ",");
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log("commas6:");
-          console.log(commas2);
-          console.log("working!");
           input_ans.value = '';
           input_ans.value = problem5;
         }
@@ -1678,8 +1668,6 @@ function getNumber(num){
           commas2.splice(3, 0, ",");
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log("commas7:");
-          console.log(commas2);
           input_ans.value = '';
           input_ans.value = problem5;
         }
@@ -1698,8 +1686,6 @@ function getNumber(num){
           commas2.splice(5, 0, ",");
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log("commas8:");
-          console.log(commas2);
           input_ans.value = '';
           input_ans.value = problem5;
         }
@@ -1718,8 +1704,6 @@ function getNumber(num){
           commas2.splice(6, 0, ",");
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log("commas10:");
-          console.log(commas2);
           input_ans.value = '';
           input_ans.value = problem5;
         }
@@ -1738,8 +1722,6 @@ function getNumber(num){
           commas2.splice(7, 0, ",");
           var problem5 = commas2.join('');
           problem5 = problem5.replace(/ +/g, ' ');
-          console.log("commas11:");
-          console.log(commas2);
           input_ans.value = '';
           input_ans.value = problem5;
         }
@@ -1806,7 +1788,6 @@ function clearScreen(){
 }
 
 function answer(num1, num2, operand){
-  console.log(evalStringArray);
   var z = 0;
   for (var j = 1; j < evalStringArray.length;){
     if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
@@ -1877,7 +1858,6 @@ function answer(num1, num2, operand){
       commas2.splice(2, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log(commas2);
       input_var.value = '';
       input_var.value = problem5;
     }
@@ -1973,19 +1953,24 @@ function Negation(){
   var index2 = index1 - 1;
   var count = 1;
   var sign = false;
+  var sign1 = false;
 
   for(var i = index2; i != 0; i--){
     if (evalStringArray[i] == "*") {
       sign = true;
+      sign1 == true;
     }
     else if (evalStringArray[i] == "/") {
       sign = true;
+      sign1 == true;
     }
     else if (evalStringArray[i] == "-") {
       sign = true;
+      sign1 == true;
     }
     else if (evalStringArray[i] == "+") {
       sign = true;
+      sign1 == true;
     }
     else if (sign == false) {
         count = count + 1;
@@ -1993,21 +1978,30 @@ function Negation(){
   }
 
   negated_num = [];
+
   for (var s = 0; s < count; s++){
     var push = evalStringArray[index2];
     negated_num.splice(0, 0, push);
     index2 = index2 - 1;
   }
 
+  for (var gg = 0; gg < negated_num.length; gg++){
+    if (negated_num[gg] == "*"){
+      negated_num.splice(gg, 1);
+    }
+  }
+
+  console.log("negnum2: " + negated_num);
   var problem1 = negated_num.join('');
   problem1 = problem1.replace(/ +/g, ' ');
-
+  console.log("negnum1: " + problem1);
   var negnum = problem1 * (-1);
+  console.log("negnum: " + negnum);
 
   if (negnum < 0){
     index1 = evalStringArray.length;
     index2 = index1;
-    index2 = index2 - count;
+    index2 = (index2 - count) + 1;
     evalStringArray.splice(index2, 0, "-");
     input_var.value = negnum;
     var lengthin2 = 0;
@@ -2019,7 +2013,6 @@ function Negation(){
     else {
       lengthin2 = input_var.value.length;
     }
-    console.log("lengthin2: " + lengthin2);
     if (lengthin2 > 3) {
       //make an array. add comma to array. make it the output.
       if (lengthin2 == 4) {
@@ -2142,7 +2135,6 @@ function Negation(){
     else {
       lengthin1 = input_var.value.length;
     }
-    console.log("lengthin1: " + lengthin1);
     if (lengthin1 > 3) {
       //make an array. add comma to array. make it the output.
       if (lengthin1 == 4) {
@@ -2251,6 +2243,7 @@ function Negation(){
   }
   var problem = evalStringArray.join('');
   problem = problem.replace(/ +/g, ' ');
+  console.log("problem " + problem);
   var evaluation = eval(problem);
   input_ans.value = evaluation;
 
@@ -2269,8 +2262,6 @@ function Negation(){
       problem4 = problem4.replace(/ +/g, ' ');
       input_ans.value = '';
       input_ans.value = problem4;
-      console.log("commas4:");
-      console.log(commas);
     }
     else if (input_ans.value.length == 5) {
       commas2 = [];
@@ -2286,9 +2277,6 @@ function Negation(){
       commas2.splice(2, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas6:");
-      console.log(commas2);
-      console.log("working!");
       input_ans.value = '';
       input_ans.value = problem5;
     }
@@ -2306,8 +2294,6 @@ function Negation(){
       commas2.splice(3, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas7:");
-      console.log(commas2);
       input_ans.value = '';
       input_ans.value = problem5;
     }
@@ -2326,8 +2312,6 @@ function Negation(){
       commas2.splice(5, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas8:");
-      console.log(commas2);
       input_ans.value = '';
       input_ans.value = problem5;
     }
@@ -2346,8 +2330,6 @@ function Negation(){
       commas2.splice(6, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas10:");
-      console.log(commas2);
       input_ans.value = '';
       input_ans.value = problem5;
     }
@@ -2366,8 +2348,6 @@ function Negation(){
       commas2.splice(7, 0, ",");
       var problem5 = commas2.join('');
       problem5 = problem5.replace(/ +/g, ' ');
-      console.log("commas11:");
-      console.log(commas2);
       input_ans.value = '';
       input_ans.value = problem5;
     }
