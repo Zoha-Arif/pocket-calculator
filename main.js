@@ -2309,7 +2309,6 @@ else if (input_var.value.includes('.')){
 }
 
 function Negation() {
-  console.log("eval" + evalStringArray);
   var index1 = evalStringArray.length;
   var index2 = index1 - 1;
   var index3 = input_var.value.length;
@@ -2318,15 +2317,24 @@ function Negation() {
 for (var del = 0; del < index3; del++){
   evalStringArray.splice(index2, 1);
   index2--;
-  console.log("del: " + del);
-  console.log("index2: " + index2);
 }
 
-console.log("evalStringArray = " + evalStringArray);
+var values3 = input_var.value.toString()
+values3 = values3.replace(",", "");
+
+for (var hats = 0; hats < values3.length; hats++){
+  if (values3[hats] == ","){
+    values3 = values3.replace(",", "");
+  }
+}
+console.log("values3: " + values3);
+input_var.value = values3;
 
 
-  var negnum = input_var.value * (-1);
+  var negnum = parseFloat(input_var.value) * (-1);
+  console.log(isNaN(negnum));
   input_var.value = negnum;
+  console.log("INITIAL: " + negnum);
 
   if (negnum < 0){
   negnum = negnum.toString();
@@ -2340,7 +2348,7 @@ console.log("evalStringArray = " + evalStringArray);
   var index1 = evalStringArray.length;
   var index2 = index1 - 1;
 
-  for (var del1 = 0; del1 < (newnum.length); del1++){
+  for (var del1 = 0; del1 < (negnum.length); del1++){
     evalStringArray.push(newnum[del1]);
     console.log("new eval: " + evalStringArray);
   }
@@ -2431,7 +2439,6 @@ for (var j = 1; j < evalStringArray.length;){
     j = 1;
     z = 0;
   }
-
   else {
     z++;
     j++;
@@ -2611,6 +2618,16 @@ if (tells > 3) {
     problem5 = problem5.replace(/ +/g, ' ');
     input_ans.value = '';
     input_ans.value = problem5;
+
+    var z = 0;
+    for (var j = 1; j < evalStringArray.length;){
+    if ((evalStringArray[j] == "-") && (evalStringArray[z] == ",")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      j = 1;
+      z = 0;
+    }
+  }
   }
   else if (tells == 7) {
     commas2 = [];
@@ -2629,6 +2646,16 @@ if (tells > 3) {
     problem5 = problem5.replace(/ +/g, ' ');
     input_ans.value = '';
     input_ans.value = problem5;
+
+    var z = 0;
+    for (var j = 1; j < evalStringArray.length;){
+    if ((evalStringArray[j] == "-") && (evalStringArray[z] == ",")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      j = 1;
+      z = 0;
+    }
+  }
   }
   else if (tells == 8) {
     commas2 = [];
@@ -2647,6 +2674,16 @@ if (tells > 3) {
     problem5 = problem5.replace(/ +/g, ' ');
     input_ans.value = '';
     input_ans.value = problem5;
+
+    var z = 0;
+    for (var j = 1; j < evalStringArray.length;){
+    if ((evalStringArray[j] == "-") && (evalStringArray[z] == ",")) {
+      evalStringArray.splice(j, 1);
+      //evalStringArray.splice(z, 1);
+      j = 1;
+      z = 0;
+    }
+  }
   }
   else if (tells == 9) {
     commas2 = [];
@@ -2684,13 +2721,14 @@ if (tells > 3) {
     input_ans.value = '';
     input_ans.value = problem5;
   } */
-  else {
+  else{
     var evaluation = eval(problem);
     evaluation = Number(evaluation);
     input_ans.value = evaluation.toExponential();
   }
 }
 }
+input_var.value = input_ans.value;
   }
 
   function Percentage() {
