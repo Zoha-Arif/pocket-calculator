@@ -2379,13 +2379,13 @@ else {
 
     /*The number of decimals in the product equals the sum of the number of decimals in the factors*/
 
-/* function countDecimals(value) {
+ function countDecimals(value) {
     if (Math.floor(value) !== value)
         return value.toString().split(".")[1].length || 0;
       return 0;
-} */
+}
 
-function countDecimals(value){
+/* function countDecimals(value){
   value = value.toString();
   if (value.includes(".")){
     var index = value.indexOf(".");
@@ -2398,7 +2398,7 @@ function countDecimals(value){
     count4 = 0;
   }
   return count4;
-}
+} */
 
 /* function countIndex(value1) {
   value1 = value1.toString();
