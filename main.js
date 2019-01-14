@@ -2364,6 +2364,333 @@ else {
   }
 
 }
+
+var z = 0;
+for (var j = 1; j < evalStringArray.length;){
+  console.log("evalStringArray: " + evalStringArray);
+  if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
+    evalStringArray.splice(j, 1);
+    // evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "-")) {
+    evalStringArray.splice(j, 1);
+
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+
+  else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "/")) {
+    evalStringArray.splice(j, 1);
+    //evalStringArray.splice(z, 1)
+    j = 1;
+    z = 0;
+  }
+
+  else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "*")) {
+    evalStringArray.splice(j, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "-")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "*")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "/")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "+")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "+")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+  else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "+")) {
+    evalStringArray.splice(z, 1);
+    //evalStringArray.splice(z, 1);
+    j = 1;
+    z = 0;
+  }
+
+  else {
+    z++;
+    j++;
+  }
+}
+
+var problem = evalStringArray.join('');
+problem = problem.replace(/ +/g, ' ');
+var evaluation = eval(problem);
+input_ans.value = evaluation;
+if (input_ans.value == "Infinity"){
+input_ans.value = "Error";
+}
+else if (!input_ans.value.includes('.')){
+if (input_ans.value.length > 3) {
+  //make an array. add comma to array. make it the output.
+  if (input_ans.value.length == 4) {
+    commas = [];
+    for (var h = 0; h < input_ans.value.length; h++){
+      if (input_ans.value[h] != ",") {
+        var value = input_ans.value[h];
+        commas.push(value);
+      }
+    }
+    commas.splice(1, 0, ",");
+    var problem4 = commas.join('');
+    problem4 = problem4.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem4;
+  }
+  else if (input_ans.value.length == 5) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(2, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (input_ans.value.length == 6) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(3, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (input_ans.value.length == 7) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(1, 0, ",");
+    commas2.splice(5, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (input_ans.value.length == 8) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(2, 0, ",");
+    commas2.splice(6, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (input_ans.value.length == 9) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(3, 0, ",");
+    commas2.splice(7, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else {
+    var evaluation = eval(problem);
+    evaluation = Number(evaluation);
+    input_ans.value = evaluation.toExponential();
+  }
+}
+}
+
+else if (input_ans.value.includes('.')){
+var tells = input_ans.value.indexOf(".");
+tells = tells;
+console.log(tells);
+if (tells > 3) {
+  //make an array. add comma to array. make it the output.
+  if (tells == 5) {
+    commas = [];
+    for (var h = 0; h < input_ans.value.length; h++){
+      if (input_ans.value[h] != ",") {
+        var value = input_ans.value[h];
+        commas.push(value);
+      }
+    }
+    commas.splice(2, 0, ",");
+    var problem4 = commas.join('');
+    problem4 = problem4.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem4;
+  }
+  else if (tells == 4) {
+    commas = [];
+    for (var h = 0; h < input_ans.value.length; h++){
+      if (input_ans.value[h] != ",") {
+        var value = input_ans.value[h];
+        commas.push(value);
+      }
+    }
+    commas.splice(1, 0, ",");
+    var problem4 = commas.join('');
+    problem4 = problem4.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem4;
+  }
+
+
+
+  else if (tells == 6) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(3, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (tells == 7) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(1, 0, ",");
+    commas2.splice(5, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (tells == 8) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(2, 0, ",");
+    commas2.splice(6, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  else if (tells == 9) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(3, 0, ",");
+    commas2.splice(7, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  }
+  /*else if (tells == 10) {
+    commas2 = [];
+    for (var g = 0; g < input_ans.value.length; g++){
+      if (input_ans.value[g] == ",") {
+      }
+      else {
+        var value = input_ans.value[g];
+        commas2.push(value);
+      }
+
+    }
+    commas2.splice(3, 0, ",");
+    commas2.splice(7, 0, ",");
+    var problem5 = commas2.join('');
+    problem5 = problem5.replace(/ +/g, ' ');
+    input_ans.value = '';
+    input_ans.value = problem5;
+  } */
+  else {
+    var evaluation = eval(problem);
+    evaluation = Number(evaluation);
+    input_ans.value = evaluation.toExponential();
+  }
+}
+}
   }
 
   function Percentage() {
@@ -2446,6 +2773,332 @@ else {
       evalStringArray.push(newnum[del1]);
       console.log("new eval: " + evalStringArray);
     }
+    var z = 0;
+    for (var j = 1; j < evalStringArray.length;){
+      console.log("evalStringArray: " + evalStringArray);
+      if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
+        evalStringArray.splice(j, 1);
+        // evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "-")) {
+        evalStringArray.splice(j, 1);
+
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+
+      else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "/")) {
+        evalStringArray.splice(j, 1);
+        //evalStringArray.splice(z, 1)
+        j = 1;
+        z = 0;
+      }
+
+      else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "*")) {
+        evalStringArray.splice(j, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "-")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "*")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "+") && (evalStringArray[z] == "/")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "-") && (evalStringArray[z] == "+")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "*") && (evalStringArray[z] == "+")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+      else if ((evalStringArray[j] == "/") && (evalStringArray[z] == "+")) {
+        evalStringArray.splice(z, 1);
+        //evalStringArray.splice(z, 1);
+        j = 1;
+        z = 0;
+      }
+
+      else {
+        z++;
+        j++;
+      }
+    }
+
+    var problem = evalStringArray.join('');
+    problem = problem.replace(/ +/g, ' ');
+    var evaluation = eval(problem);
+    input_ans.value = evaluation;
+if (input_ans.value == "Infinity"){
+input_ans.value = "Error";
+}
+else if (!input_ans.value.includes('.')){
+    if (input_ans.value.length > 3) {
+      //make an array. add comma to array. make it the output.
+      if (input_ans.value.length == 4) {
+        commas = [];
+        for (var h = 0; h < input_ans.value.length; h++){
+          if (input_ans.value[h] != ",") {
+            var value = input_ans.value[h];
+            commas.push(value);
+          }
+        }
+        commas.splice(1, 0, ",");
+        var problem4 = commas.join('');
+        problem4 = problem4.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem4;
+      }
+      else if (input_ans.value.length == 5) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (input_ans.value.length == 6) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (input_ans.value.length == 7) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(1, 0, ",");
+        commas2.splice(5, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (input_ans.value.length == 8) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        commas2.splice(6, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (input_ans.value.length == 9) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        commas2.splice(7, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else {
+        var evaluation = eval(problem);
+        evaluation = Number(evaluation);
+        input_ans.value = evaluation.toExponential();
+      }
+    }
+  }
+
+else if (input_ans.value.includes('.')){
+    var tells = input_ans.value.indexOf(".");
+    tells = tells;
+    console.log(tells);
+    if (tells > 3) {
+      //make an array. add comma to array. make it the output.
+      if (tells == 5) {
+        commas = [];
+        for (var h = 0; h < input_ans.value.length; h++){
+          if (input_ans.value[h] != ",") {
+            var value = input_ans.value[h];
+            commas.push(value);
+          }
+        }
+        commas.splice(2, 0, ",");
+        var problem4 = commas.join('');
+        problem4 = problem4.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem4;
+      }
+      else if (tells == 4) {
+        commas = [];
+        for (var h = 0; h < input_ans.value.length; h++){
+          if (input_ans.value[h] != ",") {
+            var value = input_ans.value[h];
+            commas.push(value);
+          }
+        }
+        commas.splice(1, 0, ",");
+        var problem4 = commas.join('');
+        problem4 = problem4.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem4;
+      }
+
+
+
+      else if (tells == 6) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (tells == 7) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(1, 0, ",");
+        commas2.splice(5, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (tells == 8) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(2, 0, ",");
+        commas2.splice(6, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      else if (tells == 9) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        commas2.splice(7, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      }
+      /*else if (tells == 10) {
+        commas2 = [];
+        for (var g = 0; g < input_ans.value.length; g++){
+          if (input_ans.value[g] == ",") {
+          }
+          else {
+            var value = input_ans.value[g];
+            commas2.push(value);
+          }
+
+        }
+        commas2.splice(3, 0, ",");
+        commas2.splice(7, 0, ",");
+        var problem5 = commas2.join('');
+        problem5 = problem5.replace(/ +/g, ' ');
+        input_ans.value = '';
+        input_ans.value = problem5;
+      } */
+      else {
+        var evaluation = eval(problem);
+        evaluation = Number(evaluation);
+        input_ans.value = evaluation.toExponential();
+      }
+    }
+  }
     }
 
   /* Restructure negation function. Make the input_var.value.length into an array. If a negative is already there, take it out. If it's not there, put it there.
