@@ -2366,7 +2366,87 @@ else {
 }
   }
 
+  function Percentage() {
+    var index1 = evalStringArray.length;
+    var index2 = index1 - 1;
+    var index3 = input_var.value.length;
 
+    /*This loop deletes the current input_var.value from the evalStringArray*/
+  for (var del = 0; del < index3; del++){
+    evalStringArray.splice(index2, 1);
+    index2--;
+  }
+
+    /*The number of decimals in the product equals the sum of the number of decimals in the factors*/
+
+/* function countDecimals(value) {
+    if (Math.floor(value) !== value)
+        return value.toString().split(".")[1].length || 0;
+      return 0;
+} */
+
+function countDecimals(value){
+  value = value.toString();
+  if (value.includes(".")){
+    var index = value.indexOf(".");
+    var count4 = 0;
+    for (var deci = index; deci < (value.length - 1); deci++){
+      count4++;
+    }
+  }
+  else {
+    count4 = 0;
+  }
+  return count4;
+}
+
+/* function countIndex(value1) {
+  value1 = value1.toString();
+  if (value1.includes(".")){
+    var index = value1.indexOf(".");
+    console.log("INDEX: " + index);
+    for (var deci = index; deci < (value1.length); deci++){
+      if (value1[deci] != 0){
+        var hobi = (deci - 1);
+      }
+    }
+  }
+  else {
+    var hobi = 0;
+  }
+  return hobi;
+}
+*/
+    var percent = Number(input_var.value * 0.01);
+    console.log("INPUT: " + input_var.value);
+    var value1 = Number(input_var.value);
+    var total1 = Number(countDecimals(value1));
+    var total2 = Number(countDecimals(0.01));
+    var total3 = total1 + total2;
+    console.log("TOTAL1 " + total1);
+    console.log("TOTAL2 " + total2);
+    console.log("TOTAL3 " + total3);
+
+    percent = percent.toFixed(total3);
+
+    console.log("INITIAL PERCENT: " + percent);
+    input_var.value = percent;
+    percent = percent.toString();
+    var newnum = [];
+    console.log("percent length: " + percent.length);
+    for(var hos = 0; hos < percent.length; hos++){
+      newnum.push(percent[hos]);
+    }
+
+    console.log("newnum:" + newnum);
+    var index1 = evalStringArray.length;
+    var index2 = index1 - 1;
+
+    for (var del1 = 0; del1 < (newnum.length); del1++){
+      evalStringArray.push(newnum[del1]);
+      console.log("new eval: " + evalStringArray);
+    }
+    }
 
   /* Restructure negation function. Make the input_var.value.length into an array. If a negative is already there, take it out. If it's not there, put it there.
   Then, delete the input_var.value from the evalStringArray and then put back the new value.  */
