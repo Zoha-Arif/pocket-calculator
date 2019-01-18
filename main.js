@@ -2754,6 +2754,7 @@ input_var.value = input_ans.value;
 } */
 
  function countDecimals(value){
+   /*Credited to W3 Schools*/
    function scientificToDecimal(num) {
        const sign = Math.sign(num);
        //if the number is in scientific notation remove it
@@ -2783,13 +2784,15 @@ input_var.value = input_ans.value;
        return num;
    }
 
-  value = scientificToDecimal(value)
+  value = scientificToDecimal(value);
   console.log("VALUE11: " + value);
-  value = Number(value).toPrecision();
-  console.log("VALUE2: " + value);
+  //value = Number(value).toPrecision();
+  //console.log("VALUE2: " + value);
   value = value.toString();
+
   if (value.includes("e")) {
   }
+
   if (value.includes(".")){
     var index = value.indexOf(".");
     var count4 = 0;
@@ -2847,11 +2850,9 @@ input_var.value = input_ans.value;
 
     for (var del1 = 0; del1 < (newnum.length); del1++){
       evalStringArray.push(newnum[del1]);
-      console.log("new eval: " + evalStringArray);
     }
     var z = 0;
     for (var j = 1; j < evalStringArray.length;){
-      console.log("evalStringArray: " + evalStringArray);
       if ((evalStringArray[j] == "+") && (evalStringArray[z] == "+")) {
         evalStringArray.splice(j, 1);
         // evalStringArray.splice(z, 1);
@@ -2924,6 +2925,7 @@ input_var.value = input_ans.value;
 
     var problem = evalStringArray.join('');
     problem = problem.replace(/ +/g, ' ');
+    console.log("EVAL: " + problem);
     var evaluation = eval(problem);
     input_ans.value = evaluation;
 if (input_ans.value == "Infinity"){
